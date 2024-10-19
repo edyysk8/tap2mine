@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tap2Earn</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        // Função para obter o token do Telegram
+        function getTelegramToken() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('tgWebApp');
+        }
+
+        // Inicializa o bot
+        window.onload = function() {
+            const token = getTelegramToken();
+            // Aqui você pode fazer algo com o token se necessário
+        };
+    </script>
 </head>
-<body class="default">
+<body>
     <div class="container">
         <h1>Tap2Earn</h1>
         <div id="levelDisplay">Nível: 1</div>
@@ -15,7 +28,7 @@
         </div>
         
         <div id="earningsDisplay">Ganho automático: 0 Moedas/segundo</div>
-        <img src="assets/viral-character.png" alt="Personagem Viral para ganhar moedas" class="viral-character tap-button" aria-label="Toque para ganhar moedas" tabindex="0">
+        <img src="assets/viral-character.png" alt="Personagem Viral" class="viral-character tap-button" aria-label="Toque para ganhar moedas" tabindex="0">
         
         <div id="upgrades">
             <h2>Upgrades</h2>
@@ -40,9 +53,7 @@
             <h2>Controle de Música</h2>
             <button id="toggleMusicButton">Ativar Música</button>
         </div>
-        
-
-
+    </div>
 
     <!-- Elementos de áudio -->
     <audio id="coinSound" src="assets/coin_sound.mp3" preload="auto"></audio>
